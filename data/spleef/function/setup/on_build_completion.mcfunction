@@ -6,7 +6,6 @@ schedule clear spleef:setup/border_shrink
 schedule function spleef:setup/border_shrink 100s
 
 # barry the bat. he drops items to spice the game up
-scoreboard objectives add barry_height dummy
 kill @e[type=bat, tag=barry]
 execute at @e[type=marker, tag=center_marker] run summon bat ~ ~15 ~ {Tags:[barry], CustomName:'"Barry"', active_effects:[{id:"resistance", amplifier:255, duration:-1}]}
 

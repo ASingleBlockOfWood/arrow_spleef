@@ -8,6 +8,7 @@ playsound minecraft:entity.warden.sonic_boom player @a ^ ^ ^3 4 1
 # prevents the player from being dropped into the crater the bolt creates
 execute at @s run tp @s ^ ^ ^5
 execute as @s at @s run function spleef:bolt/bolt_recursive
+
 scoreboard objectives add height dummy
 execute store result score @s height run data get entity @s Pos[1]
 # as marker at marker tp to -61

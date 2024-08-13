@@ -22,7 +22,7 @@ execute store result score #counter ground_thickness run data get entity @p Pos[
 scoreboard players operation #counter ground_thickness -= #const min_ground_thickness
 
 # exit early if player is too low
-execute if score #counter ground_thickness matches ..-65 run tellraw @a {"text": "must be above y=-32 to play", "color": "red"}
+execute if score #counter ground_thickness matches ..-65 run tellraw @a {"text": "must be y=-34 or above to play", "color": "red"}
 execute if score #counter ground_thickness matches ..-65 run scoreboard players set #counter terminate 1
 execute if score #counter ground_thickness matches ..-65 run return fail
 
@@ -49,7 +49,7 @@ schedule function spleef:setup/check_build_completion 1t
 # clear 16 blocks up above the ground level
 schedule clear spleef:cleaner/clear_area
 kill @e[type=marker, tag=clear_area_placeholder]
-execute at @p align xyz run summon marker ~ ~17 ~ {Tags:[clear_area_placeholder]}
+execute at @p align xyz run summon marker ~ ~4 ~ {Tags:[clear_area_placeholder]}
 scoreboard objectives add current_clear_height dummy
 scoreboard objectives add end_clear_height dummy
 execute store result score #counter current_clear_height \
@@ -86,7 +86,7 @@ execute store result score #const top_height run data get entity @n[type=marker,
 
 # add a marker to the corner for volume detections
 kill @e[type=marker, tag=border_corner]
-execute at @n[type=marker, tag=center_marker] align xyz run summon marker ~-51 -64 ~-51 {Tags:[border_corner]}
+execute at @n[type=marker, tag=center_marker] align xyz run summon marker ~-56 -70 ~-56 {Tags:[border_corner]}
 
 # give players required items and effects (spectator to prevent player death in build phase)
 gamemode spectator @a 
@@ -119,7 +119,7 @@ execute store result storage spleef delta_angle float 0.01 \
 # rotate the marker and place the players creating a circle of evenly spaced players
 kill @e[type=marker, tag=player_spawn]
 execute as @a run function spleef:setup/rotate_marker with storage spleef {}
-#make the markers face the center
+# make the markers face the center
 execute as @a at @s facing entity @n[type=marker, tag=center_marker] eyes run tp @s ~ ~ ~ ~ 0
 
 schedule clear spleef:timer/bolt_timer
