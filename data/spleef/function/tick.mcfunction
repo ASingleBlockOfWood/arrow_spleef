@@ -1,9 +1,5 @@
 # start game if trigger is used while in creative
-execute if score #counter terminate matches 1 run scoreboard players enable @a spleef
-execute as @a[gamemode=creative] if score #counter terminate matches 1 \
-    unless score @s spleef matches 0 \
-    run function spleef:setup/manual_load
-scoreboard players set @a spleef 0
+execute as @a unless score @s spleef matches 0 run function spleef:start_trigger
 
 # end if terminate = true
 execute if score #counter terminate matches 1 run return fail
