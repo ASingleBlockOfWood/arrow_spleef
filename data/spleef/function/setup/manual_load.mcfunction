@@ -94,8 +94,7 @@ effect give @a glowing infinite 1 true
 effect give @a night_vision infinite 1 true
 give @a bow[enchantments={punch: 10}]
 give @a golden_carrot 16
-give @a chorus_fruit 4
-give @a ender_pearl 1
+give @a wind_charge 8
 
 # for raycast
 scoreboard objectives add ray_step dummy
@@ -125,6 +124,9 @@ execute as @a at @s facing entity @n[type=marker, tag=center_marker] eyes run tp
 schedule clear spleef:timer/bolt_timer
 schedule clear spleef:timer/arrow_timer
 schedule clear spleef:timer/crossbow_timer
+schedule clear spleef:timer/wind_charge_timer
+
+# set on bow/crossbow use
 
 # for countdown timer
 scoreboard objectives add timer_seconds_left dummy

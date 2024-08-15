@@ -7,15 +7,6 @@ execute if score #counter terminate matches 1 run return fail
 # clear the area around barry
 execute at @n[type=bat, tag=barry] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air replace
 
-# check for player death every ticks
-#execute as @a[gamemode=survival, tag=!dead, scores={deaths=1}] run function spleef:end/on_death
-
-# kill player if they fall below a certain height
-#execute as @a[gamemode=survival, tag=!dead, scores={deaths=0}] store result score @s player_y_pos \
-    run data get entity @s Pos[1]
-#execute as @a[gamemode=survival, tag=!dead, scores={deaths=0}] if score @s player_y_pos <= #const death_zone \
-    run function spleef:end/on_death
-
 # handles player deaths
 execute at @n[type=marker, tag=border_corner] as @a[dx=120, dz=120, dy=400] run function spleef:handler/player_handler
 

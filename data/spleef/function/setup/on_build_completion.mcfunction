@@ -15,3 +15,4 @@ gamemode survival @a
 schedule function spleef:timer/bolt_timer 6s
 function spleef:timer/arrow_timer
 schedule function spleef:timer/crossbow_timer 16s
+function spleef:timer/wind_charge_timer

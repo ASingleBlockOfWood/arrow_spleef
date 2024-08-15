@@ -14,3 +14,6 @@
 # above code prints 'should be dead' even after being destroyed
 # therefore the @s cannot be changed from within the function it is context for
 # rerun to determine if it was said as teh server or as the killed entity
+
+give @s minecraft:tipped_arrow[custom_name='"wind arrow"', potion_contents={custom_effects:[{id: "unluck", amplifier: 100, show_particles:0b, duration: 100}]}] 10
+give @s bow[enchantments={multishot:18}]

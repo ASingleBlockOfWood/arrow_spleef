@@ -23,6 +23,7 @@ kill @e[type=marker, tag=player_spawn]
 schedule clear spleef:timer/bolt_timer
 schedule clear spleef:timer/arrow_timer
 schedule clear spleef:timer/crossbow_timer
+schedule clear spleef:timer/wind_charge_timer
 schedule clear spleef:setup/border_shrink
 schedule clear spleef:setup/check_build_completion
 schedule clear spleef:timer/start_timer
